@@ -42,6 +42,7 @@ Plugin.prototype.apply = function(compiler) {
     });
 
     compiler.plugin('done', function(stats){
+      console.log('HOWDY!', stats);
       if (stats.compilation.errors.length > 0) {
         var error = stats.compilation.errors[0];
         self.writeOutput(compiler, {
